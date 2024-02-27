@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Items = ({ robot }) => {
+const Items = ({ robot, onAddToCart }) => {
   const { name, price, stock, createdAt, material, image } = robot;
 
   const originalDate = new Date(createdAt);
@@ -18,7 +18,8 @@ const Items = ({ robot }) => {
           <p className="card-text">Stock: {stock}</p>
           <p className="card-text">Created Date: {formattedDate}</p>
           <p className="card-text">Material: {material}</p>
-          <button className={`btn btn-primary${stock === 0 ? ' disabled' : ''}`} disabled={stock === 0}>
+          <button className={`btn btn-primary${stock === 0 ? ' disabled' : ''}`} disabled={stock === 0}
+          onClick={onAddToCart}>
             Add to Cart
           </button>
         </div>
