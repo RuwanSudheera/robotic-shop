@@ -1,0 +1,23 @@
+.card {
+    height: 400px;
+    background-color: rgb(92, 248, 233);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .card-title {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  
+  .card-img-top {
+    max-height: 150px;
+    object-fit: cover;
+  }
+  
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }

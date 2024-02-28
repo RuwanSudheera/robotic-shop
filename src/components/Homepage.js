@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Items from './Items';
 import Cart from './Cart';
+import './homepage.css';
 
 const Homepage = ({ robots }) => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -35,17 +36,17 @@ const Homepage = ({ robots }) => {
 
   return (
     <div className="homepage">
+      <h2>SL Robot Shop</h2>
+
+      {/* Search bar */}
+      <input
+        type="text"
+        placeholder="Search by material"
+        value={searchTerm}
+        onChange={handleSearch}
+      />
       <div className="row">
         <div className="col-md-8">
-          <h2>SL Robot Shop</h2>
-
-          {/* Search bar */}
-          <input
-            type="text"
-            placeholder="Search by material type"
-            value={searchTerm}
-            onChange={handleSearch}
-          />
 
           <div className="row">
             {filteredRobots.map((robot) => (
