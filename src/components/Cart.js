@@ -1,4 +1,5 @@
 import React from 'react';
+import './cart.css';
 
 const Cart = ({ selectedRobots }) => {
   // Calculate total quantity and price
@@ -7,16 +8,31 @@ const Cart = ({ selectedRobots }) => {
 
   return (
     <div className="cart">
-      <h3>Shopping Cart</h3>
-      <ul>
-        {selectedRobots.map((robot) => (
-          <li key={robot.id}>
-            {robot.name} - Quantity: {robot.quantity} - Price: LKR {robot.price * robot.quantity}
-          </li>
-        ))}
-      </ul>
-      <p>Total Quantity: {totalQuantity}</p>
-      <p>Total Price: LKR {totalPrice}</p>
+      <h3>Your Cart</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          {selectedRobots.map((robot) => (
+            <tr key={robot.id}>
+              <td>{robot.name}</td>
+              <td>{robot.quantity}</td>
+              <td>LKR {robot.price * robot.quantity}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      {selectedRobots.length > 0 && (
+        <>
+          <p>Total Quantity: {totalQuantity}</p>
+          <p>Total Price: LKR {totalPrice}</p>
+        </>
+      )}
     </div>
   );
 };
