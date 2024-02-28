@@ -9,7 +9,8 @@ function App() {
     const fetchData = async () => {
       try {
         const data = await fetchRobotData();
-        setRobotData(data);
+        const dataWithIds = data.map((item, index) => ({ ...item, id: index}));
+        setRobotData(dataWithIds);
       } catch (error) {
         console.error('Error setting data:', error);
       }
