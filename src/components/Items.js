@@ -10,7 +10,7 @@ const Items = ({ robot, onAddToCart }) => {
   }).format(originalDate);
 
   return (
-    <div className="outer-card col-md-4 mb-4"> {/* Use Bootstrap grid classes */}
+    <div className="outer-card col-md-4 mb-4">
       <div className="card">
         <img src={image} alt={name} className="card-img-top" />
         <div className="card-body">
